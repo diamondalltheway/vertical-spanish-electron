@@ -9,7 +9,8 @@
     "generate:icons": "png2icons assets/icon.png assets/icon -icns -bc",
     "start": "electron-forge start",
     "package": "npm run generate:icons && electron-forge package",
-    "make": "npm run generate:icons && electron-forge make",
+    "make": "node scripts/preflight-release.js && npm run generate:icons && electron-forge make",
+    "make:local": "npm run generate:icons && VS_ELECTRON_LOCAL_BUILD=1 electron-forge make",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "node --test tests/unit/*.test.js",
     "test:e2e": "node --test tests/e2e/*.test.js"
