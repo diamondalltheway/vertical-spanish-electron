@@ -7,6 +7,7 @@ const { _electron: electron } = require('playwright');
 
 const APP_ROOT = path.resolve(__dirname, '..', '..');
 const ELECTRON_BIN = require('electron');
+const EXPECTED_ELECTRON_VERSION = require('electron/package.json').version;
 
 function createUserDataDir() {
   return fs.mkdtempSync(path.join(os.tmpdir(), 'vertical-spanish-electron-'));
@@ -44,6 +45,13 @@ test('loads Vertical Spanish with browser-only storage', async () => {
 
     assert.match(await page.title(), /Vertical Spanish/);
     assert.equal(await page.evaluate(() => typeof process), 'undefined');
+
+    const desktopRuntime = await page.evaluate(() => window.verticalSpanishDesktop);
+    assert.deepEqual(Object.keys(desktopRuntime).sort(), ['electronVersion', 'isElectron', 'platform']);
+    assert.equal(desktopRuntime.isElectron, true);
+    assert.equal(desktopRuntime.electronVersion, EXPECTED_ELECTRON_VERSION);
+    assert.equal(desktopRuntime.platform, process.platform);
+    assert.equal(await page.evaluate(() => Boolean(window.verticalSpanishDesktop?.isElectron)), true);
 
     await page.waitForFunction(
       async () => {

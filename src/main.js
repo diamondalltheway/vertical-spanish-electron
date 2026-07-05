@@ -6,6 +6,7 @@ const APP_URL = 'https://verticalspanish.com/';
 const APP_PARTITION = 'persist:verticalspanish';
 const ERROR_PAGE_PATH = path.join(__dirname, 'error.html');
 const ICON_PATH = path.join(__dirname, '..', 'assets', 'icon.png');
+const PRELOAD_PATH = path.join(__dirname, 'preload.js');
 const DRAG_BAR_ID = 'vs-electron-drag-bar';
 const TITLEBAR_GUARD_CSS = `
   #${DRAG_BAR_ID} {
@@ -219,6 +220,7 @@ function createWindow() {
     trafficLightPosition: process.platform === 'darwin' ? { x: 16, y: 16 } : undefined,
     webPreferences: {
       partition: APP_PARTITION,
+      preload: PRELOAD_PATH,
       nodeIntegration: false,
       nodeIntegrationInWorker: false,
       nodeIntegrationInSubFrames: false,

@@ -1,7 +1,7 @@
 {
   "name": "vertical-spanish-electron",
   "productName": "Vertical Spanish",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A macOS Electron wrapper for verticalspanish.com.",
   "main": "src/main.js",
   "private": true,
