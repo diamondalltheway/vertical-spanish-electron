@@ -1,0 +1,27 @@
+{
+  "name": "vertical-spanish-electron",
+  "productName": "Vertical Spanish",
+  "version": "0.1.1",
+  "description": "A macOS Electron wrapper for verticalspanish.com.",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "generate:icons": "png2icons assets/icon.png assets/icon -icns -bc",
+    "start": "electron-forge start",
+    "package": "npm run generate:icons && electron-forge package",
+    "make": "npm run generate:icons && electron-forge make",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:e2e": "node --test tests/e2e/*.test.js"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.11.2",
+    "@electron-forge/maker-dmg": "^7.11.2",
+    "@electron-forge/maker-zip": "^7.11.2",
+    "electron": "^43.0.0",
+    "playwright": "^1.61.1",
+    "png2icons": "^2.0.1"
+  }
+}

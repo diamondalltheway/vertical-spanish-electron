@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vertical Spanish</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #111124;
+        color: #f7f3ff;
+      }
+
+      body {
+        align-items: center;
+        background:
+          radial-gradient(circle at top left, rgba(125, 92, 190, 0.28), transparent 34rem),
+          linear-gradient(145deg, #111124 0%, #161527 52%, #201d33 100%);
+        display: flex;
+        min-height: 100vh;
+        margin: 0;
+        padding: 48px 24px;
+        box-sizing: border-box;
+      }
+
+      main {
+        max-width: 520px;
+      }
+
+      img {
+        display: block;
+        height: auto;
+        margin-bottom: 32px;
+        max-width: 280px;
+        width: 70vw;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 7vw, 4.75rem);
+        line-height: 0.95;
+        margin: 0 0 18px;
+      }
+
+      p {
+        color: rgba(247, 243, 255, 0.74);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0 0 26px;
+      }
+
+      a {
+        align-items: center;
+        background: #f7f3ff;
+        border-radius: 999px;
+        color: #19162a;
+        display: inline-flex;
+        font-weight: 700;
+        min-height: 44px;
+        padding: 0 20px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="../assets/logo-vs.png" alt="Vertical Spanish" />
+      <h1>Vertical Spanish is offline.</h1>
+      <p>Check your connection, then retry. Your browser data stays in this app profile.</p>
+      <a href="https://verticalspanish.com/">Retry</a>
+    </main>
+  </body>
+</html>
